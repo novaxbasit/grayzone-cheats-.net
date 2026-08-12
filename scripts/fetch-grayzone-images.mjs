@@ -1,12 +1,12 @@
 import { mkdir, readdir, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import sharp from 'sharp';
-import { buildOverlaySvg } from './tarkov-hack-overlays.mjs';
+import { buildOverlaySvg } from './grayzone-hack-overlays.mjs';
 
 const imagesDir = path.resolve('public/images');
 const publicDir = path.resolve('public');
 
-/** Verified IGN Escape from Tarkov screenshot CDN paths. */
+/** Verified IGN Gray Zone Warfare screenshot CDN paths. */
 const ME_G = 'https://sm.ign.com/t/ign_me/gallery/c/call-of-du';
 const ME = 'https://sm.ign.com/t/ign_me/screenshot/c/call-of-du';
 const NL = 'https://sm.ign.com/t/ign_nl/screenshot/c/call-of-du';
@@ -14,78 +14,78 @@ const BR = 'https://sm.ign.com/t/ign_br/screenshot/default';
 const PK = 'https://sm.ign.com/t/ign_pk/screenshot/default';
 
 /**
- * Tarkov cheats image pipeline:
- * 1. Download real Escape from Tarkov gameplay from IGN
- * 2. Composite ESP / aimbot / radar / mod-menu overlays for tarkov cheats marketing
+ * Gray Zone Warfare cheats image pipeline:
+ * 1. Download real Gray Zone Warfare gameplay from IGN
+ * 2. Composite ESP / aimbot / radar / mod-menu overlays for Gray Zone Warfare cheats marketing
  */
 const KEYWORD_ASSETS = [
 	{
-		file: 'tarkov-cheats-hero.webp',
-		url: `${ME_G}/escape-from-tarkov-screenshots_wjkx.1400.jpg`,
+		file: 'gzw-cheats-hero.webp',
+		url: `${ME_G}/gray-zone-warfare-screenshots_wjkx.1400.jpg`,
 		overlay: 'hero',
 	},
 	{
-		file: 'tarkov-cheats-aimbot.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_wjb1.1400.jpg`,
+		file: 'gzw-cheats-aimbot.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_wjb1.1400.jpg`,
 		overlay: 'aimbot',
 	},
 	{
-		file: 'tarkov-cheats-esp-wallhack.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_55fp.1400.jpg`,
+		file: 'gzw-cheats-esp-wallhack.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_55fp.1400.jpg`,
 		overlay: 'wallhack',
 	},
 	{
-		file: 'tarkov-squad-fight.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_67cp.1400.jpg`,
+		file: 'gzw-squad-fight.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_67cp.1400.jpg`,
 		overlay: 'esp',
 	},
 	{
-		file: 'tarkov-cheats-package.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_anf4.1400.jpg`,
+		file: 'gzw-cheats-package.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_anf4.1400.jpg`,
 		overlay: 'menu',
 	},
 	{
-		file: 'tarkov-cheats-cover.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_7pr8.1400.jpg`,
+		file: 'gzw-cheats-cover.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_7pr8.1400.jpg`,
 		overlay: 'esp',
 	},
 	{
-		file: 'tarkov-header-art.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_c36j.1400.jpg`,
+		file: 'gzw-header-art.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_c36j.1400.jpg`,
 		overlay: 'hero',
 	},
 	{
-		file: 'tarkov-loadout-builder.webp',
-		url: `${NL}/escape-from-tarkov-screenshots_e5gw.1400.jpg`,
+		file: 'gzw-loadout-builder.webp',
+		url: `${NL}/gray-zone-warfare-screenshots_e5gw.1400.jpg`,
 		overlay: 'menu',
 	},
 	{
-		file: 'tarkov-battle-royale-combat.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_4h92.1400.jpg`,
+		file: 'gzw-battle-royale-combat.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_4h92.1400.jpg`,
 		overlay: 'esp',
 	},
 	{
-		file: 'tarkov-extract-fight.webp',
+		file: 'gzw-extract-fight.webp',
 		url: `${BR}/goulag-inside_zusa.1400.png`,
 		overlay: 'extract',
 	},
 	{
-		file: 'tarkov-player-esp.webp',
-		url: `${ME}/escape-from-tarkov-screenshots_rb92.1400.jpg`,
+		file: 'gzw-player-esp.webp',
+		url: `${ME}/gray-zone-warfare-screenshots_rb92.1400.jpg`,
 		overlay: 'esp',
 	},
 	{
-		file: 'tarkov-scav-run-combat.webp',
+		file: 'gzw-scav-run-combat.webp',
 		url: `${BR}/plunder_px6d.1400.png`,
 		overlay: 'scav-run',
 	},
 	{
-		file: 'tarkov-scav-run-mode.webp',
+		file: 'gzw-scav-run-mode.webp',
 		url: `${BR}/parachuting_qhh2.1400.png`,
 		overlay: 'loot',
 	},
 	{
-		file: 'tarkov-verdansk-map.webp',
+		file: 'gzw-verdansk-map.webp',
 		url: `${PK}/wz-verdansksubway-1601169413816_x2hg.1400.jpg`,
 		overlay: 'map',
 	},
@@ -94,12 +94,12 @@ const KEYWORD_ASSETS = [
 const REMOVE_PATTERNS = [
 	/^fortnite-/,
 	/-\d+w\.webp$/i,
-	/^tarkov-cheats-logo/,
+	/^gzw-cheats-logo/,
 ];
 
 async function fetchBase(url) {
 	const res = await fetch(url, {
-		headers: { 'User-Agent': 'Mozilla/5.0 (compatible; TarkovHacksSite/1.0)' },
+		headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GZWHacksSite/1.0)' },
 	});
 	if (!res.ok) throw new Error(`HTTP ${res.status}`);
 	return Buffer.from(await res.arrayBuffer());
@@ -123,7 +123,7 @@ async function composeHackImage(baseBuffer, overlayPreset) {
 async function cleanImagesDir() {
 	const files = await readdir(imagesDir).catch(() => []);
 	for (const file of files) {
-		if (file.includes('tarkov-cheats-logo')) continue;
+		if (file.includes('gzw-cheats-logo')) continue;
 		if (REMOVE_PATTERNS.some((pattern) => pattern.test(file))) {
 			await unlink(path.join(imagesDir, file));
 			console.log(`Removed ${file}`);
@@ -138,7 +138,7 @@ async function generateBrandAssets(heroBuffer) {
 		.webp({ quality: 88 })
 		.toBuffer();
 
-	await writeFile(path.join(imagesDir, 'tarkov-cheats-logo.webp'), logoBuffer);
+	await writeFile(path.join(imagesDir, 'gzw-cheats-logo.webp'), logoBuffer);
 
 	for (const { name, size } of [
 		{ name: 'favicon-16x16.png', size: 16 },
@@ -165,7 +165,7 @@ for (const asset of KEYWORD_ASSETS) {
 		await writeFile(path.join(imagesDir, asset.file), webp);
 		console.log(`  ✓ ${asset.file} (${webp.length} bytes)`);
 		saved++;
-		if (asset.file === 'tarkov-cheats-hero.webp') heroBuffer = webp;
+		if (asset.file === 'gzw-cheats-hero.webp') heroBuffer = webp;
 	} catch (err) {
 		console.warn(`  ✗ Skip ${asset.file}: ${err.message}`);
 	}
@@ -176,4 +176,4 @@ if (heroBuffer) {
 	console.log('Generated logo + favicons from hero.');
 }
 
-console.log(`\nDone — ${saved}/${KEYWORD_ASSETS.length} Tarkov cheats images (IGN base + ESP/aimbot overlays).`);
+console.log(`\nDone — ${saved}/${KEYWORD_ASSETS.length} Gray Zone Warfare cheats images (IGN base + ESP/aimbot overlays).`);

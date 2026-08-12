@@ -60,7 +60,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 			{
 				h2: 'Radar',
 				paragraphs: ['A simple 2D radar for threats outside your view.'],
-				list: ['Nearby enemy cues', 'Adjustable range', 'Works in PMC & Scav'],
+				list: ['Nearby enemy cues', 'Adjustable range', 'Works in PMC & bot'],
 			},
 			{
 				h2: 'Updates & support',
@@ -102,7 +102,7 @@ export const simplePageCopy: Partial<Record<PageId, SimplePageCopy>> = {
 		intro: brandCopy.statusIntro,
 		ctaPrimary: brandCopy.ctaBuy,
 		ctaSecondary: 'Undetected guide',
-		ctaSecondaryHref: '/undetected-tarkov-cheats/',
+		ctaSecondaryHref: '/undetected-gzw-cheats/',
 		galleryTitle: 'In-game look',
 		sections: [
 			{

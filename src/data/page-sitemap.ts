@@ -1,5 +1,5 @@
 import { siteConfig } from './site';
-import { tarkovImages } from './tarkov';
+import { grayzoneImages } from './grayzone';
 import { englishPaths, pageIds, type PageId } from './i18n/routing';
 import { pageSitemapMeta } from './sitemap-meta';
 import {
@@ -31,34 +31,34 @@ const img = (path: string, title: string, caption: string): SitemapImage => ({
 });
 
 /**
- * One screenshot per page — paths stay in tarkovImages; titles/captions from brand tokens.
+ * One screenshot per page — paths stay in grayzoneImages; titles/captions from brand tokens.
  */
 const pageImageSrcById: Record<PageId, string> = {
-	home: tarkovImages.hero,
-	'tarkov-esp': tarkovImages.playerEsp,
-	'tarkov-aimbot': tarkovImages.aimbotCombat,
-	features: tarkovImages.aimbotSkeleton,
-	pricing: tarkovImages.cheatsCombat,
-	setup: tarkovImages.playerEsp,
-	updates: tarkovImages.hero,
-	faq: tarkovImages.aimbotSkeleton,
-	support: tarkovImages.cheatsCombat,
-	undetected: tarkovImages.espWallhack,
-	wallhack: tarkovImages.espWallhack,
-	radar: tarkovImages.playerEsp,
-	battleye: tarkovImages.aimbotCombat,
-	'cheats-2026': tarkovImages.hero,
-	hacks: tarkovImages.cheatsCombat,
-	'cheat-download': tarkovImages.cheatsCombat,
-	'mod-menu': tarkovImages.playerEsp,
-	'soft-aim': tarkovImages.aimbotSkeleton,
-	'best-cheats': tarkovImages.hero,
-	'aimbot-hack': tarkovImages.aimbotSkeleton,
-	'esp-hack': tarkovImages.espWallhack,
-	'unlock-all': tarkovImages.playerEsp,
-	privacy: tarkovImages.aimbotCombat,
-	refund: tarkovImages.cheatsCombat,
-	terms: tarkovImages.aimbotSkeleton,
+	home: grayzoneImages.hero,
+	'gzw-esp': grayzoneImages.playerEsp,
+	'gzw-aimbot': grayzoneImages.aimbotCombat,
+	features: grayzoneImages.aimbotSkeleton,
+	pricing: grayzoneImages.cheatsCombat,
+	setup: grayzoneImages.playerEsp,
+	updates: grayzoneImages.hero,
+	faq: grayzoneImages.aimbotSkeleton,
+	support: grayzoneImages.cheatsCombat,
+	undetected: grayzoneImages.espWallhack,
+	wallhack: grayzoneImages.espWallhack,
+	radar: grayzoneImages.playerEsp,
+	eac: grayzoneImages.aimbotCombat,
+	'cheats-2026': grayzoneImages.hero,
+	hacks: grayzoneImages.cheatsCombat,
+	'cheat-download': grayzoneImages.cheatsCombat,
+	'mod-menu': grayzoneImages.playerEsp,
+	'soft-aim': grayzoneImages.aimbotSkeleton,
+	'best-cheats': grayzoneImages.hero,
+	'aimbot-hack': grayzoneImages.aimbotSkeleton,
+	'esp-hack': grayzoneImages.espWallhack,
+	'unlock-all': grayzoneImages.playerEsp,
+	privacy: grayzoneImages.aimbotCombat,
+	refund: grayzoneImages.cheatsCombat,
+	terms: grayzoneImages.aimbotSkeleton,
 };
 
 for (const pageId of pageIds) {

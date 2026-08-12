@@ -71,32 +71,32 @@ const SITEMAP_TEXT_KEYS = [
 
 const DEFAULT_SITEMAP_IMAGES = [
 	{
-		src: '/images/tarkov-esp-player-tags.webp',
+		src: '/images/gzw-esp-player-tags.webp',
 		title: '{primaryKeyword} ESP',
 		caption: 'See players with {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-wallhack-skeleton.webp',
+		src: '/images/gzw-wallhack-skeleton.webp',
 		title: '{primaryKeyword} wallhack',
 		caption: 'See through walls with {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-aimbot-sniper.webp',
+		src: '/images/gzw-aimbot-sniper.webp',
 		title: '{primaryKeyword} aimbot',
 		caption: 'Aimbot in {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-aimbot-skeleton.webp',
+		src: '/images/gzw-aimbot-skeleton.webp',
 		title: '{primaryKeyword} aimbot view',
 		caption: 'Aimbot bone view in {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-esp-radar.webp',
+		src: '/images/gzw-esp-radar.webp',
 		title: '{primaryKeyword} radar',
 		caption: 'Radar map in {primaryKeyword}',
 	},
 	{
-		src: '/images/tarkov-cheats-combat.webp',
+		src: '/images/gzw-cheats-combat.webp',
 		title: '{primaryKeyword} in a fight',
 		caption: 'Fight view with {primaryKeyword}',
 	},
@@ -364,10 +364,10 @@ export function validateBrandPayload(body) {
 	const lifetime = price(b.lifetimePrice ?? b.lifetime);
 	const monthlyLabel = soft(b.monthlyLabel, 'Monthly', 40);
 	const lifetimeLabel = soft(b.lifetimeLabel, 'Lifetime', 40);
-	const logo = assetPath(b.logo ?? '/images/tarkov-cheats-logo.webp');
-	const logoRaster = assetPath(b.logoRaster ?? '/images/tarkov-cheats-logo.png');
-	const defaultOgImage = assetPath(b.defaultOgImage ?? '/images/tarkov-cheats-combat.webp');
-	const heroImage = assetPath(b.heroImage ?? '/images/tarkov-hero-banner.webp');
+	const logo = assetPath(b.logo ?? '/images/gzw-cheats-logo.webp');
+	const logoRaster = assetPath(b.logoRaster ?? '/images/gzw-cheats-logo.png');
+	const defaultOgImage = assetPath(b.defaultOgImage ?? '/images/gzw-cheats-combat.webp');
+	const heroImage = assetPath(b.heroImage ?? '/images/gzw-hero-banner.webp');
 	const logoAlt = soft(b.logoAlt, `${name || 'Brand'} logo`, 120);
 	const logoW = price(b.logoRasterWidth ?? 512) ?? 512;
 	const logoH = price(b.logoRasterHeight ?? 512) ?? 512;

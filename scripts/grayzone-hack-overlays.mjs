@@ -1,6 +1,6 @@
 /**
- * SVG overlay generators for Tarkov cheats marketing images.
- * Composited on top of IGN Tarkov gameplay screenshots.
+ * SVG overlay generators for Gray Zone Warfare cheats marketing images.
+ * Composited on top of IGN GZW gameplay screenshots.
  */
 
 const PURPLE = '#c084fc';

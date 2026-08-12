@@ -2,7 +2,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const SIMPLE =
-	"images: { hero: 'tarkov cheats', espWallhack: 'tarkov cheats wallhack', aimbotCombat: 'tarkov cheats aimbot', squadFight: 'tarkov cheats', playerEsp: 'tarkov cheats esp', headerArt: 'tarkov cheats aimbot', cheatsPackage: 'tarkov cheats radar', rebootFight: 'tarkov cheats aimbot', battleRoyale: 'tarkov cheats', battleRoyaleIsland: 'tarkov cheats esp' }";
+	"images: { hero: 'Gray Zone Warfare cheats', espWallhack: 'Gray Zone Warfare cheats wallhack', aimbotCombat: 'Gray Zone Warfare cheats aimbot', squadFight: 'Gray Zone Warfare cheats', playerEsp: 'Gray Zone Warfare cheats esp', headerArt: 'Gray Zone Warfare cheats aimbot', cheatsPackage: 'Gray Zone Warfare cheats radar', rebootFight: 'Gray Zone Warfare cheats aimbot', battleRoyale: 'Gray Zone Warfare cheats', battleRoyaleIsland: 'Gray Zone Warfare cheats esp' }";
 
 const re =
 	/images: \{ hero: '[^']+', espWallhack: '[^']+', aimbotCombat: '[^']+', squadFight: '[^']+', playerEsp: '[^']+', headerArt: '[^']+', cheatsPackage: '[^']+', rebootFight: '[^']+', battleRoyale: '[^']+', battleRoyaleIsland: '[^']+' \}/g;
@@ -15,30 +15,30 @@ for (const f of ['scripts/i18n-data/ui-strings-part1.mjs', 'scripts/i18n-data/ui
 }
 
 const altMap = [
-	["imageAlt: 'Tarkov ESP player tags hack'", "imageAlt: 'tarkov cheats esp'"],
-	["imageAlt: 'Tarkov ESP radar hack'", "imageAlt: 'tarkov cheats radar'"],
-	["imageAlt: 'Tarkov aimbot sniper kill'", "imageAlt: 'tarkov cheats aimbot'"],
-	["imageAlt: 'Tarkov aimbot skeleton targeting'", "imageAlt: 'tarkov cheats aimbot'"],
-	["imageAlt: 'Tarkov cheats ADS combat'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats setup PC activation'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats updates BattlEye maintenance'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats FAQ ESP aimbot'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats support license help'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Undetected tarkov cheats ESP wallhack'", "imageAlt: 'undetected tarkov cheats'"],
-	["imageAlt: 'Tarkov wallhack skeleton ESP'", "imageAlt: 'tarkov cheats wallhack'"],
-	["imageAlt: 'BattlEye bypass tarkov ESP aimbot'", "imageAlt: 'tarkov cheats battleye'"],
-	["imageAlt: 'Tarkov cheats 2026 ESP aimbot'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats combat aimbot'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheat download ESP aimbot'", "imageAlt: 'tarkov cheats download'"],
-	["imageAlt: 'Tarkov mod menu ESP aimbot'", "imageAlt: 'tarkov cheats mod menu'"],
-	["imageAlt: 'Tarkov soft aim aimbot settings'", "imageAlt: 'tarkov cheats soft aim'"],
-	["imageAlt: 'Best tarkov cheats 2026 ESP'", "imageAlt: 'best tarkov cheats'"],
-	["imageAlt: 'Tarkov aimbot hack combat'", "imageAlt: 'tarkov cheats aimbot'"],
-	["imageAlt: 'Tarkov ESP hack wallhack'", "imageAlt: 'tarkov cheats esp'"],
-	["imageAlt: 'Tarkov unlock all ESP aimbot guide'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats privacy policy'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats refund policy'", "imageAlt: 'tarkov cheats'"],
-	["imageAlt: 'Tarkov cheats terms of use'", "imageAlt: 'tarkov cheats'"],
+	["imageAlt: 'GZW ESP player tags hack'", "imageAlt: 'Gray Zone Warfare cheats esp'"],
+	["imageAlt: 'GZW ESP radar hack'", "imageAlt: 'Gray Zone Warfare cheats radar'"],
+	["imageAlt: 'GZW aimbot sniper kill'", "imageAlt: 'Gray Zone Warfare cheats aimbot'"],
+	["imageAlt: 'GZW aimbot skeleton targeting'", "imageAlt: 'Gray Zone Warfare cheats aimbot'"],
+	["imageAlt: 'Gray Zone Warfare cheats ADS combat'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats setup PC activation'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats updates Easy Anti-Cheat maintenance'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats FAQ ESP aimbot'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats support license help'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Undetected Gray Zone Warfare cheats ESP wallhack'", "imageAlt: 'undetected Gray Zone Warfare cheats'"],
+	["imageAlt: 'GZW wallhack skeleton ESP'", "imageAlt: 'Gray Zone Warfare cheats wallhack'"],
+	["imageAlt: 'Easy Anti-Cheat bypass gzw ESP aimbot'", "imageAlt: 'Gray Zone Warfare cheats eac'"],
+	["imageAlt: 'Gray Zone Warfare cheats 2026 ESP aimbot'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats combat aimbot'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheat download ESP aimbot'", "imageAlt: 'Gray Zone Warfare cheats download'"],
+	["imageAlt: 'GZW mod menu ESP aimbot'", "imageAlt: 'Gray Zone Warfare cheats mod menu'"],
+	["imageAlt: 'GZW soft aim aimbot settings'", "imageAlt: 'Gray Zone Warfare cheats soft aim'"],
+	["imageAlt: 'Best Gray Zone Warfare cheats 2026 ESP'", "imageAlt: 'best Gray Zone Warfare cheats'"],
+	["imageAlt: 'GZW aimbot hack combat'", "imageAlt: 'Gray Zone Warfare cheats aimbot'"],
+	["imageAlt: 'GZW ESP hack wallhack'", "imageAlt: 'Gray Zone Warfare cheats esp'"],
+	["imageAlt: 'GZW unlock all ESP aimbot guide'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats privacy policy'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats refund policy'", "imageAlt: 'Gray Zone Warfare cheats'"],
+	["imageAlt: 'Gray Zone Warfare cheats terms of use'", "imageAlt: 'Gray Zone Warfare cheats'"],
 ];
 
 let pages = readFileSync('scripts/i18n-data/pages-en.mjs', 'utf8');
@@ -49,13 +49,13 @@ console.log('pages-en imageAlts simplified');
 // productPage() imageAlt template in pages-i18n
 let i18n = readFileSync('scripts/i18n-data/pages-i18n.mjs', 'utf8');
 i18n = i18n
-	.split("imageAlt: `Tarkov ${meta.altKeyword}`")
-	.join("imageAlt: 'tarkov cheats'")
-	.split("galleryTitle: `Tarkov Cheats ${topicName}`")
-	.join("galleryTitle: 'tarkov cheats'")
-	.split("imageAlt: `Tarkov cheats ${kind} policy`")
-	.join("imageAlt: 'tarkov cheats'")
-	.split("galleryTitle: `Tarkov Cheats ${kind} resources`")
-	.join("galleryTitle: 'tarkov cheats'");
+	.split("imageAlt: `GZW ${meta.altKeyword}`")
+	.join("imageAlt: 'Gray Zone Warfare cheats'")
+	.split("galleryTitle: `Gray Zone Cheats ${topicName}`")
+	.join("galleryTitle: 'Gray Zone Warfare cheats'")
+	.split("imageAlt: `Gray Zone Warfare cheats ${kind} policy`")
+	.join("imageAlt: 'Gray Zone Warfare cheats'")
+	.split("galleryTitle: `Gray Zone Cheats ${kind} resources`")
+	.join("galleryTitle: 'Gray Zone Warfare cheats'");
 writeFileSync('scripts/i18n-data/pages-i18n.mjs', i18n);
 console.log('pages-i18n image alts simplified');

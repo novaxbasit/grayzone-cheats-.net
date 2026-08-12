@@ -13,42 +13,42 @@ export type BrandSitemapImage = {
 
 const defaultImages: BrandSitemapImage[] = [
 	{
-		src: '/images/tarkov-cheats-esp.webp',
-		title: 'tarkov cheats esp',
-		caption: 'tarkov cheats esp wallhack',
+		src: '/images/gzw-cheats-esp.webp',
+		title: 'Gray Zone Warfare cheats esp',
+		caption: 'Gray Zone Warfare cheats esp wallhack',
 	},
 	{
-		src: '/images/tarkov-cheats-wallhack.webp',
-		title: 'tarkov cheats wallhack',
-		caption: 'tarkov cheats wallhack esp',
+		src: '/images/gzw-cheats-wallhack.webp',
+		title: 'Gray Zone Warfare cheats wallhack',
+		caption: 'Gray Zone Warfare cheats wallhack esp',
 	},
 	{
-		src: '/images/tarkov-cheats-aimbot.webp',
-		title: 'tarkov cheats aimbot',
-		caption: 'tarkov cheats aimbot soft aim',
+		src: '/images/gzw-cheats-aimbot.webp',
+		title: 'Gray Zone Warfare cheats aimbot',
+		caption: 'Gray Zone Warfare cheats aimbot soft aim',
 	},
 	{
-		src: '/images/tarkov-cheats-aimbot-view.webp',
-		title: 'tarkov cheats aimbot',
-		caption: 'tarkov cheats aimbot view',
+		src: '/images/gzw-cheats-aimbot-view.webp',
+		title: 'Gray Zone Warfare cheats aimbot',
+		caption: 'Gray Zone Warfare cheats aimbot view',
 	},
 	{
-		src: '/images/tarkov-cheats-radar.webp',
-		title: 'tarkov cheats radar',
-		caption: 'tarkov cheats radar hack',
+		src: '/images/gzw-cheats-radar.webp',
+		title: 'Gray Zone Warfare cheats radar',
+		caption: 'Gray Zone Warfare cheats radar hack',
 	},
 	{
-		src: '/images/tarkov-cheats-raid.webp',
-		title: 'tarkov cheats',
-		caption: 'tarkov cheats in raid',
+		src: '/images/gzw-cheats-raid.webp',
+		title: 'Gray Zone Warfare cheats',
+		caption: 'Gray Zone Warfare cheats in raid',
 	},
 ];
 
 /** Per-page image title/caption templates for the English urlset. */
 const pageImageTemplates: Record<PageId, { title: string; caption: string }> = {
-	home: { title: '{primaryKeyword}', caption: 'ESP, aimbot, and radar for Tarkov on PC' },
-	'tarkov-esp': { title: '{primaryKeyword} ESP', caption: 'See players through walls with {primaryKeyword}' },
-	'tarkov-aimbot': { title: '{primaryKeyword} aimbot', caption: 'Aimbot view in {primaryKeyword}' },
+	home: { title: '{primaryKeyword}', caption: 'ESP, aimbot, and radar for GZW on PC' },
+	'gzw-esp': { title: '{primaryKeyword} ESP', caption: 'See players through walls with {primaryKeyword}' },
+	'gzw-aimbot': { title: '{primaryKeyword} aimbot', caption: 'Aimbot view in {primaryKeyword}' },
 	features: { title: '{primaryKeyword} features', caption: 'What you get with {primaryKeyword}' },
 	pricing: { title: '{primaryKeyword} plans', caption: 'Monthly and lifetime {primaryKeyword} plans' },
 	setup: { title: '{primaryKeyword} setup', caption: 'How to set up {primaryKeyword} on PC' },
@@ -58,7 +58,7 @@ const pageImageTemplates: Record<PageId, { title: string; caption: string }> = {
 	undetected: { title: 'Undetected {primaryKeyword}', caption: 'Safe status notes for {primaryKeyword}' },
 	wallhack: { title: '{primaryKeyword} wallhack', caption: 'See through walls with {primaryKeyword}' },
 	radar: { title: '{primaryKeyword} radar', caption: 'Radar map in {primaryKeyword}' },
-	battleye: { title: '{antiCheat} and {primaryKeyword}', caption: '{primaryKeyword} after a BattlEye update' },
+	eac: { title: '{antiCheat} and {primaryKeyword}', caption: '{primaryKeyword} after a Easy Anti-Cheat update' },
 	'cheats-2026': { title: '{primaryKeyword} 2026', caption: '{primaryKeyword} buyer guide for 2026' },
 	hacks: { title: '{primaryKeyword}', caption: '{primaryKeyword} ESP, aimbot, and radar' },
 	'cheat-download': { title: '{primaryKeyword} download', caption: 'Get {primaryKeyword} after you buy' },

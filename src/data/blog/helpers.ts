@@ -1,5 +1,5 @@
 import { siteConfig } from '../site';
-import { tarkovImages } from '../tarkov';
+import { grayzoneImages } from '../grayzone';
 import { blogSitemapImageMeta } from '../brand-sitemap';
 import {
 	defaultLocale,
@@ -12,16 +12,16 @@ import type { BlogImageKey, BlogPostDefinition, BlogTranslation, ResolvedBlogPos
 import { blogPosts as rawBlogPosts } from './posts.generated';
 
 const imageMap: Record<BlogImageKey, string> = {
-	hero: tarkovImages.espWallhack,
-	espWallhack: tarkovImages.espWallhack,
-	aimbotCombat: tarkovImages.aimbotCombat,
-	squadFight: tarkovImages.aimbotCombat,
-	headerArt: tarkovImages.playerEsp,
-	cheatsPackage: tarkovImages.espWallhack,
-	playerEsp: tarkovImages.playerEsp,
-	rebootFight: tarkovImages.aimbotCombat,
-	battleRoyaleCombat: tarkovImages.cheatsCombat,
-	battleRoyaleIslandMap: tarkovImages.espWallhack,
+	hero: grayzoneImages.espWallhack,
+	espWallhack: grayzoneImages.espWallhack,
+	aimbotCombat: grayzoneImages.aimbotCombat,
+	squadFight: grayzoneImages.aimbotCombat,
+	headerArt: grayzoneImages.playerEsp,
+	cheatsPackage: grayzoneImages.espWallhack,
+	playerEsp: grayzoneImages.playerEsp,
+	rebootFight: grayzoneImages.aimbotCombat,
+	battleRoyaleCombat: grayzoneImages.cheatsCombat,
+	battleRoyaleIslandMap: grayzoneImages.espWallhack,
 };
 
 function expandTranslations(
@@ -205,7 +205,7 @@ export function getBlogSitemapEntriesForLocale(locale: LocaleCode) {
 	for (const post of blogPosts) {
 		const t = post.translations[locale];
 		const imageSrc = getBlogImageSrc(post.imageKey);
-		const isProductPost = /Tarkov Cheats|Tarkov Cheats|Aimbot|ESP|Undetected|Comparisons/i.test(
+		const isProductPost = /Gray Zone Cheats|Gray Zone Cheats|Aimbot|ESP|Undetected|Comparisons/i.test(
 			post.category,
 		);
 		entries.push({
