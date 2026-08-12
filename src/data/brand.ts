@@ -13,7 +13,7 @@ export const brand = {
 	locale: 'en',
 	market: 'Worldwide',
 	supportEmail: 'support@grayzonecheats.net',
-	checkoutUrl: 'https://zadeyo.com/go/QRH?to=%2Fproducts%2Fgray-zone-warfare',
+	checkoutUrl: 'https://zadeyo.com/go/BASIT?to=%2Fproducts%2Fgray-zone-warfare',
 
 	/** Game this template instance targets */
 	game: 'Gray Zone Warfare',
